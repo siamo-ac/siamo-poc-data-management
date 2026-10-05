@@ -7,10 +7,10 @@ All data in this demo is fictional.
 
 Databases slow down as they grow. Three ideas keep them fast at scale:
 
-1. **Sharding** — split one big dataset across several machines ("shards")
+1. **Sharding (database partitioning)** — split one big dataset across several machines ("shards")
    by a **shard key** (here: the customer id). Each machine holds a slice of
    the data, so reads and writes scale out instead of piling onto one box.
-2. **Indexes** — a lookup structure on a frequently-queried column so the
+2. **Indexes (index optimization)** — a lookup structure on a frequently-queried column so the
    engine doesn't read every row to find a few. This demo prints the query
    plan before and after: `SCAN 100000 rows` vs `INDEX SEEK 100 rows`.
 3. **Document modeling** — in NoSQL stores you can denormalize: keep
